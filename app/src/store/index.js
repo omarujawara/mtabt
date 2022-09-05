@@ -34,7 +34,25 @@ const store = createStore({
         filterOutManhattan : (state) => { state.alerts = state.alerts.filter( (alert)  =>  alert.city != 'Manhattan, NY') },
         filterOutQueens : (state) => { state.alerts = state.alerts.filter( (alert)  =>  alert.city != 'Queens, NY') },
         filterOutStatenIsland : (state) => { state.alerts = state.alerts.filter( (alert)  =>  alert.city != 'Staten Island, NY') },
+        
+        filterInBronx : (state) => { state.alerts = state.alerts.filter( (alert)  =>  alert.city != 'Bronx, NY') },
+        filterInBrooklyn : (state) => { state.alerts = state.alerts.filter( (alert)  =>  alert.city != 'Brooklyn, NY') },
+        filterInManhattan : (state) => { state.alerts = state.alerts.filter( (alert)  =>  alert.city != 'Manhattan, NY') },
+        filterInQueens : (state) => { state.alerts = state.alerts.filter( (alert)  =>  alert.city != 'Queens, NY') },
+        filterInStatenIsland : (state) => { state.alerts = state.alerts.filter( (alert)  =>  alert.city != 'Staten Island, NY') },
+
+        selectAlertsOrJams : (state,data) => {
+            if(data === 'alerts') {
+                state.showAlerts = true;
+                state.showJams = false;
+            }
+            else if (data === 'jams') {
+                state.showJams = true;
+                state.showAlerts = false;
+            }
+        }
     },
+
     actions:{
         loadFeed({commit}) {
             axios.get("http://localhost:3000/")

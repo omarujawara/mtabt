@@ -2,10 +2,12 @@
   <div>
     <div class="top-components">
       <!-- <div class="">Traffic Feed</div> -->
+      <div class=""><SelectAlertJam/></div>
       <div class=""><Polygon/></div>
       <div class=""><Cities /></div> 
     </div>
-      <div class=""><Alert/></div>
+      <div class="" v-if="this.$store.state.showAlerts"><Alert/></div>
+      <div class="" v-if="this.$store.state.showJams"><Jams/></div>
   </div>
 
 </template>
@@ -15,6 +17,8 @@
 import Cities from './components/Cities.vue'
 import Alert from './components/Alerts.vue'
 import Polygon from './components/Polygon.vue'
+import SelectAlertJam from './components/SelectAlertJam.vue'
+import Jams from './components/Jams.vue'
 
 export default {
   name: 'App',
@@ -22,8 +26,9 @@ export default {
     Cities,
     Alert,
     Polygon,
+    SelectAlertJam,
+    Jams
 },
-
 }
 </script>
 

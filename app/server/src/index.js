@@ -3,7 +3,7 @@ const axios = require('axios')
 const cors = require('cors')
 const polygon = require('./constants')
 
-const {polygon8 : polygn} = polygon
+const {polygon4 : polygn} = polygon
 
 const app = express()
 app.use(cors())
