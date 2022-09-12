@@ -11,9 +11,10 @@ app.use(express.json())
 
 const port = process.env.PORT || 3000
 
-app.get('/', async (req, res) => {
+app.get('/:bridge', async (req, res) => {
     await axios.get(`https://www.waze.com/partnerhub-api/waze-feed-access-token/${polygn}?format=1`)
       .then(({data}) => {
+        console.log(req.params)
         res.send(data)
       }).catch((err) => {
         console.log(err)

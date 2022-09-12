@@ -15,7 +15,8 @@ const store = createStore({
             startTimeMillis : 0,
             endTimeMillis : 0,
             showAlerts : true,
-            showJams : false,          
+            showJams : false,   
+            selectedBridge : "0"       
 
         }
     },
@@ -55,7 +56,8 @@ const store = createStore({
 
     actions:{
         loadFeed({commit}) {
-            axios.get("http://localhost:3000/")
+            let url = `http://localhost:3000/${this.state.selectedBridge}`
+            axios.get(url)
                 .then(({data}) => {
                     console.log(data.alerts)
                     commit('getFeed', data)
