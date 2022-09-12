@@ -37,7 +37,7 @@ export default {
   brooklyn() {this.$store.commit('filterOutBrooklyn')},
   manhattan() {this.$store.commit('filterOutManhattan')},
   queens() {this.$store.commit('filterOutQueens')},
-  stateIsland() {this.$store.commit('filterOutStatenIsland')},
+  statenIsland() {this.$store.commit('filterOutStatenIsland')},
   }
 }
 </script>

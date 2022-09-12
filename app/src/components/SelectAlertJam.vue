@@ -1,6 +1,6 @@
 <template>
 <div>
-  <select class="form-select" v-model="selected" @change="selectedDropDown">
+  <select class="form-select" v-model="selected" @change="selectedDropDown()">
   <option disabled value="">Select Alerts/Jams</option>
   <option value="alerts">Alerts</option>
   <option value="jams">Jams</option>
