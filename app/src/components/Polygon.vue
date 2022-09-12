@@ -1,6 +1,6 @@
 <template>
 <div>
-  <select class="form-select" v-model="selected" >
+  <select class="form-select" v-model="selected" @change="selectedBridge()" >
   <option disabled value="">Select Bridge/Tunnel</option>
   <option value="polygon1">polygon 1</option>
   <option value="polygon2">polygon 2</option>
@@ -23,6 +23,9 @@
       return {
         selected : '',
       }
+    },
+    methods : {
+      selectedBridge() { this.$store.commit('assignSelectedBridge',this.selected)}
     }
   }
 </script>

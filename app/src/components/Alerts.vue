@@ -26,7 +26,6 @@
 import config from '../constants'
 export default {
     name : 'alert-component',
-    // props : ['config'],
     data : () => {
         return {
 
@@ -36,7 +35,12 @@ export default {
         
     },
     mounted(){
+        //dispatch the loadFeed action from vuex $store
         this.$store.dispatch('loadFeed')
+        // rerun every 2 minutes
+        setInterval(() => {
+            this.$store.dispatch('loadFeed')
+        },120000)
     },
     computed : {
       alerts() {

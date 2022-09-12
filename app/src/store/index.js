@@ -16,7 +16,7 @@ const store = createStore({
             endTimeMillis : 0,
             showAlerts : true,
             showJams : false,   
-            selectedBridge : "0"       
+            selectedBridge : "polygon4"       
 
         }
     },
@@ -51,7 +51,12 @@ const store = createStore({
                 state.showJams = true;
                 state.showAlerts = false;
             }
+        },
+        assignSelectedBridge : (state, data) => { 
+            state.selectedBridge = data;
         }
+
+
     },
 
     actions:{
