@@ -16,7 +16,7 @@ const store = createStore({
             endTimeMillis : 0,
             showAlerts : true,
             showJams : false,   
-            selectedBridge : "polygon4"       
+            selectedBridge : "polygon3"       
 
         }
     },

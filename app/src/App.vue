@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div><h2>{{this.$store.state.selectedBridge}} {{AlertOrJam}}</h2></div>
+    <div style="margin-bottom:25px"><h2>{{this.$store.state.selectedBridge.toUpperCase()}} 's {{this.$store.state.showAlerts? "Alerts" : "Jams"}}</h2></div>
     <div class="top-components">
       <!-- <div class="">Traffic Feed</div> -->
       <div class=""><SelectAlertJam/></div>
@@ -30,12 +30,6 @@ export default {
     SelectAlertJam,
     Jams
 },
-computed : {
-  AlertOrJam() {
-    const alertOrjam = this.$store.showAlerts ? "Alerts" : "Jams"
-    return alertOrjam
-  }
-}
 }
 </script>
 

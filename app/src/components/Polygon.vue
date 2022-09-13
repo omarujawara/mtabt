@@ -1,6 +1,6 @@
 <template>
 <div>
-  <select class="form-select" v-model="selected" @change="selectedBridge()" >
+  <select class="form-select" v-model="selected" @change="selectedBridge();this.$store.dispatch('loadFeed')" >
   <option disabled value="">Select Bridge/Tunnel</option>
   <option value="polygon1">polygon 1</option>
   <option value="polygon2">polygon 2</option>
